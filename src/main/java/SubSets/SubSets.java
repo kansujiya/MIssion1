@@ -77,7 +77,7 @@ public class SubSets {
                 start = end+1;
             }
             end = subsets.size()-1;
-            for(int i = 0; i <= end; i++) {
+            for(int i = start; i <= end; i++) {
                 //create a new sub set from existing subset and inset current element to it
                 List<Integer> set = new ArrayList<>(subsets.get(i));
                 set.add(arr[k]);

@@ -59,15 +59,13 @@ public class epamTree {
         Queue<TreeNode> queue = new LinkedList<>();
 
         // code here
-        List<TreeNode> temp = new LinkedList<>();
         queue.add(root);
 
         while(!queue.isEmpty()) {
             int len = queue.size();
 
             for (int i = 0; i < len; i++) {
-                TreeNode curr = queue.peek();
-                queue.remove();
+                TreeNode curr = queue.remove();
 
                 // print the last node of each level
                 if (i == len - 1) {

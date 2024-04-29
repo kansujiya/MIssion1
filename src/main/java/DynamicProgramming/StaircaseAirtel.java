@@ -92,15 +92,18 @@ public class StaircaseAirtel {
 
     //dp1 -> dp2 -> dp // 123
     // 1     0      0
-    // 1     1      3
-    // 2     2      2
-    // 2     3      1
+    // 1     1      1
+    // 2     1      2
+    // 3     2      3
     public static int decodeWays(String s) {
         int dp1=1, dp2=0, n=s.length();
         for(int i=n-1;i>=0;i--) {
+
             int dp = s.charAt(i) == '0' ? 0 : dp1;
-            if(i<n-1 && (s.charAt(i)=='1'|| s.charAt(i)=='2' && s.charAt(i+1)<'7'))
+
+            if(i<n-1 && (s.charAt(i)=='1'|| s.charAt(i)=='2' && s.charAt(i+1)<'7')) {
                 dp+=dp2;
+            }
             dp2=dp1;
             dp1=dp;
         }
@@ -229,7 +232,10 @@ public class StaircaseAirtel {
         }
 
         int[] dp = new int[S+1];
-
+        // Think we have to keep adding [1,1] -> [1,1,2] -> [1,1,2,3] -> [1,1,2,3,5]
+        // So first start from N = 2 till S = 5 each time we have to add only N steps
+        // then hold value for sum in val & opposite iterate until its reach end index
+        // will always N steps like i - N
         dp[0] = 1;
         dp[1] = 1;
 

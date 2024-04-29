@@ -98,8 +98,8 @@ public class BinarySearch {
     //Output: 4
     //Explanation: The smallest number greater than or equal to '12' is '15' having index '4'.
 
-    //Ceiling - grater value - Return start
-    //floor - smaller value - Return end
+    //Ceiling - smaller value - Return start
+    //floor - greater value - Return end
     public static int searchCeilingOfANumber(int[] arr, int key) {
         //if key is greater than last element then return -1
         if(key > arr[arr.length-1]) return -1;

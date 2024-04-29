@@ -2,10 +2,7 @@ package MultiThread.MergeSort;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class MergeSort {
 
@@ -19,7 +16,6 @@ public class MergeSort {
         list.add(3);
         list.add(9);
         list.add(1);
-
 
         ExecutorService executorService = Executors.newCachedThreadPool();
         Sorter sort = new Sorter(list, executorService);

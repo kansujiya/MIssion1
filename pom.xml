@@ -2,19 +2,81 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--  Above tag specify xml schema, that's follow correct structure of mvn -->
     <modelVersion>4.0.0</modelVersion>
+
+<!--    <parent>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--        <version>3.2.3</version>-->
+<!--    </parent>-->
+
+<!--    used to define parent project, like above this pom is child pom of above parent if no parent tag then internally it will inherit super pom-->
 
     <groupId>org.example</groupId>
     <artifactId>Mission1</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>RuleWorkFlow</module>
-    </modules>
+
+<!--    above tag specify current project unique identifier-->
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+<!--    Key value pair for configuration & als0 these properties can be used in below dependencies as well like <version> ${maven.compiler.source}</version> -->
+
+    <distributionManagement>
+        <repository>
+            <id>remote repo</id>
+            <url>https:remoteRepo.com</url>
+        </repository>
+    </distributionManagement>
+
+<!--   Here we define where to deploy jar file in company repo-->
+    <repositories>
+<!--        This is where maven look for project dependencies and download the artifact jars-->
+    </repositories>
+
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId></groupId>-->
+<!--            <artifactId></artifactId>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+
+<!--    From here actual maven start-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot</artifactId>
+                <version>3.0.6</version>
+                <artifactId>spring.maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>validate-checkStyle</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>myStyle.xml</configuration>
+            </plugin>
+        </plugins>
+    </build>
+<!--    Build help us create/add new task in below different phase-->
+
+
+<!--    Life cycle of maven project :  -->
+<!--    1. validate project structure : (mvn validate) | Now from above goals we can add any validation task in goals and adding configuration for goals-->
+<!--    2. Compile source code : (mvn compile) convert java code to byte code(.class) like target folder, but first it will follow phase 1 validate one -->
+<!--    3. Test the Code(Unit test) : (mvn test) used to run unit test cases inside test folders-->
+<!--    4. Package compiled Code (.jar) : (mvn package) generate jar or war file after above phases completions -->
+<!--    5. Verify the Integrity of Package : (mvn verify) static code analysis(Sonar) -->
+<!--    6. Deploy the package in local repository : (mvn install) install jar in local system target folder to .m2 -->
+<!--    7. Install the package in remote Repository : (mvn deploy) will deploy .jar file in company central repo or maven public in distribution management -->
 
 </project>

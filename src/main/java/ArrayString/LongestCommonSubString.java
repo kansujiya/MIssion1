@@ -1,6 +1,22 @@
 package ArrayString;
 
 public class LongestCommonSubString {
+
+    // Driver Code
+    public static void main(String[] args)
+    {
+        String X = "OldSite:GeeksforGeeks.org";
+        String Y = "NewSite:GeeksQuiz.com";
+
+        int m = X.length();
+        int n = Y.length();
+
+        System.out.println(
+                "Length of Longest Common Substring is "
+                        + LCSubStr(X.toCharArray(), Y.toCharArray(), m,
+                        n));
+    }
+
     /*
     Returns length of longest common substring
     of X[0..m-1] and Y[0..n-1]
@@ -43,20 +59,7 @@ public class LongestCommonSubString {
         return result;
     }
 
-    // Driver Code
-    public static void main(String[] args)
-    {
-        String X = "OldSite:GeeksforGeeks.org";
-        String Y = "NewSite:GeeksQuiz.com";
 
-        int m = X.length();
-        int n = Y.length();
-
-        System.out.println(
-                "Length of Longest Common Substring is "
-                        + LCSubStr(X.toCharArray(), Y.toCharArray(), m,
-                        n));
-    }
 }
 
 // This code is contributed by Sumit Ghosh

@@ -1,6 +1,7 @@
 package Heap;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -44,14 +45,14 @@ public class KTopElement {
         }
 
 
-        PriorityQueue<Integer> allocator = new PriorityQueue<Integer>(intervals.length,
+        PriorityQueue<Integer> allocator = new PriorityQueue<Integer>(
                 new Comparator<Integer>() {
                     public int compare(Integer a, Integer b) {
                         return a-b;
                     }
                 });
 
-
+        Arrays.sort(intervals, Comparator.comparingInt((int[] o) -> o[0]));
         Arrays.sort(intervals, new Comparator<int[]>() {
             public int compare(final int[] a, final int[] b) {
                 return a[0] - b[0];

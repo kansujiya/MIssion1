@@ -2,7 +2,7 @@ package MultiThread;
 
 public class PrintRunnable implements Runnable {
 
-    public int PRINT_NUMBERS_UPTO=10;
+    public int PRINT_NUMBERS_UPTO=100;
     static int  number=1;
     int remainder;
     static Object lock=new Object();
