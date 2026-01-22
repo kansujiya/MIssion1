@@ -1,0 +1,43 @@
+
+Requirement
+
+Multiple Elevator: The system manages multiple elevators.
+Request Handling: The system can handle requests to move to specific floors in a given direction (UP/DOWN).
+Direction Management: The elevator maintains and updates its current direction (UP, DOWN, IDLE).
+State Management: The elevator tracks its current floor, direction, and pending requests.
+Efficient Movement: The elevator processes requests in an efficient order (e.g., all UP requests, then all DOWN requests).
+Extensibility: Easy to add more elevators or advanced scheduling algorithms.
+
+Core Entities
+Elevator: Represents the elevator, manages its vendingMachineState, direction, and request queue.
+ElevatorController: Handles incoming requests and delegates them to the elevator.
+Request: Represents a request to move to a specific floor in a given direction.
+Direction (enum): UP, DOWN, IDLE.
+
+//Building
+   └── List<Elevator>
+
+  Elevator
+   ├── id
+   ├── currentFloor
+   ├── direction (UP, DOWN, IDLE)
+   ├── status (MOVING, STOPPED)
+   ├── Door
+   ├── List<Request>
+   └── methods: move(), addRequest(), step()
+
+  Request
+   ├── sourceFloor
+   ├── destinationFloor
+   └── direction
+
+  Controller (ElevatorController)
+   ├── List<Elevator>
+   └── methods:
+        - handleExternalRequest(floor, direction)
+        - handleInternalRequest(elevatorId, floor)
+        - assignElevator(request)
+
+  Door
+   ├── open()
+   └── close()

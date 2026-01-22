@@ -1,0 +1,12 @@
+public int dfs(TreeNode node) {
+    // base case
+    if (node == null) {
+        return some value;
+    }
+
+    ...
+
+    int left = dfs(node.left);
+    int right = dfs(node.right);
+    return value based on left and right;
+}

@@ -24,6 +24,6 @@ public class ReverseLinkedList {
             curr = nextNode;
         }
 
-        return head;
+        return prev;
     }
 }

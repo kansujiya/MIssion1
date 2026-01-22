@@ -1,0 +1,22 @@
+
+public int variableLengthSlidingWindow(int[] nums) {
+    Map<Integer, Integer> state = new HashMap<>(); // choose appropriate data structure
+    int start = 0;
+    int max_ = 0;
+
+    for (int end = 0; end < nums.length; end++) {
+        // extend window
+        // add nums[end] to state in O(1) in time
+
+        while (/* state is not valid */) {
+            // repeatedly contract window until it is valid again
+            // remove nums[start] from state in O(1) in time
+            start++;
+        }
+
+        // INVARIANT: state of current window is valid here.
+        max_ = Math.max(max_, end - start + 1);
+    }
+
+    return max_;
+}

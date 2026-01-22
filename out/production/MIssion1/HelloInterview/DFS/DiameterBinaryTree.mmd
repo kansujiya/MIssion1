@@ -1,0 +1,20 @@
+flowchart TD
+    A["DiameterDFS(3)"] --> B["DiameterDFS(9)"]
+    A --> C["DiameterDFS(null) → 0"]
+
+    B --> D["DiameterDFS(1)"]
+    B --> E["DiameterDFS(4)"]
+
+    D --> F["DiameterDFS(2) → 1"]
+    D --> G["DiameterDFS(null) → 0"]
+    D --> H["return 1 + max(1,0) = 2"]
+
+    E --> I["DiameterDFS(3) → 1"]
+    E --> J["DiameterDFS(null) → 0"]
+    E --> K["return 1 + max(1,0) = 2"]
+
+    B --> L["update maxDiameter = max(0, 2+2)=4"]
+    B --> M["return 1 + max(2,2) = 3"]
+
+    A --> N["update maxDiameter = max(4, 3+0)=4"]
+    A --> O["return 1 + max(3,0) = 4"]

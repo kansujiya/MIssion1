@@ -30,6 +30,10 @@ public class ParkingLot
         }
     }
 
+    public ParkingLot() {
+
+    }
+
     // a method for handling the scenario when a vehicle is parked
     public boolean parkVehicle(Vehicle vh)
     {

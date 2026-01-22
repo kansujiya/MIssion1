@@ -1,0 +1,14 @@
+flowchart TD
+    A["calculateTiltDFS(4)"] --> B["calculateTiltDFS(2)"]
+    A --> C["calculateTiltDFS(7)"]
+
+    B --> D["calculateTiltDFS(1) → returns 1"]
+    B --> E["calculateTiltDFS(3) → returns 3"]
+    B --> F["tilt += |1-3| = 2, returns 6"]
+
+    C --> G["calculateTiltDFS(6) → returns 6"]
+    C --> H["calculateTiltDFS(9) → returns 9"]
+    C --> I["tilt += |6-9| = 3, returns 22"]
+
+    A --> J["tilt += |6-22| = 16, total tilt = 21"]
+    A --> K["returns 32 (sum of all nodes)"]

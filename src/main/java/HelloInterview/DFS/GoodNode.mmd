@@ -1,0 +1,14 @@
+flowchart TD
+    A["goodNodeDFS(4, -∞)"] --> B["goodNodeDFS(2, 4)"]
+    A --> C["goodNodeDFS(7, 4)"]
+
+    B --> D["goodNodeDFS(1, 4)"]
+    D --> E["returns (1 < 4)"]
+    B --> F["returns (2 < 4)"]
+
+    C --> G["goodNodeDFS(6, 7)"]
+    C --> H["goodNodeDFS(9, 7)"]
+    G --> I["returns (6 < 7)"]
+    H --> J["returns (9 ≥ 7) → add 9"]
+
+    A --> K["Good nodes added: [4, 7, 9]"]

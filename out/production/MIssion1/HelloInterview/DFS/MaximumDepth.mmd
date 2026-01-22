@@ -1,0 +1,15 @@
+flowchart TD
+    A["maxDepthDFS(4)"] --> B["maxDepthDFS(2)"]
+    A --> C["maxDepthDFS(7)"]
+
+    B --> D["maxDepthDFS(1)"]
+    D --> E["maxDepthDFS(8) → returns 1"]
+    D --> F["maxDepthDFS(null) → returns 0"]
+    D --> G["returns max(1,0)+1 = 2"]
+    B --> H["returns max(2,0)+1 = 3"]
+
+    C --> I["maxDepthDFS(6) → returns 1"]
+    C --> J["maxDepthDFS(9) → returns 1"]
+    C --> K["returns max(1,1)+1 = 2"]
+
+    A --> L["returns max(3,2)+1 = 4 (final depth)"]

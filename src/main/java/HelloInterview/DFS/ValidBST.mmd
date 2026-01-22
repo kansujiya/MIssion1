@@ -1,0 +1,13 @@
+flowchart TD
+    A["isValidBST(4, -∞, ∞)"] --> B["isValidBST(2, -∞, 4)"]
+    A --> C["isValidBST(7, 4, ∞)"]
+
+    B --> D["isValidBST(1, -∞, 2) → true"]
+    B --> E["isValidBST(3, 2, 4) → true"]
+    B --> F["returns true (left subtree)"]
+
+    C --> G["isValidBST(6, 4, 7) → true"]
+    C --> H["isValidBST(9, 7, ∞) → true"]
+    C --> I["returns true (right subtree)"]
+
+    A --> J["returns true (entire tree is BST)"]

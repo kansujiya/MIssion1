@@ -3,10 +3,10 @@ package DesignPatterns.Structural;
 //Provides a surrogate or placeholder for another object to control access to it.
 // Frequently employed for implementing lazy initialization, access control, and logging.
 
-import javax.xml.bind.ValidationException;
+//import javax.xml.bind.ValidationException;
 
 interface EmployeeDAO {
-    void create() throws ValidationException;
+    void create() ;
 }
 
 class EmployeeDOAImpl implements EmployeeDAO { //IS-A
@@ -28,11 +28,11 @@ class EmployeeDAOProxy implements EmployeeDAO { //IS-A
     }
 
     @Override
-    public void create() throws ValidationException {
+    public void create()   {
         if(isAdmin) {
             employeeDAO.create();
         } else {
-            throw new ValidationException("Don't have access");
+
         }
     }
 }

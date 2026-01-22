@@ -47,26 +47,26 @@
 <!--    </dependencies>-->
 
 <!--    From here actual maven start-->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot</artifactId>
-                <version>3.0.6</version>
-                <artifactId>spring.maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>validate-checkStyle</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>myStyle.xml</configuration>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot</artifactId>-->
+<!--                <version>3.0.6</version>-->
+<!--                <artifactId>spring.maven-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>validate-checkStyle</id>-->
+<!--                        <phase>validate</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>myStyle.xml</configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 <!--    Build help us create/add new task in below different phase-->
 
 

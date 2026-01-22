@@ -1,0 +1,60 @@
+package HelloInterview.SlidingWIndow;
+
+//Given an integer array nums and an integer k, write a function to identify the highest possible sum of a subarray within nums, where the subarray meets the following criteria: its length is k, and all of its elements are unique.
+//
+//Example 1: Input:
+//
+//nums = [3, 2, 2, 3, 4, 6, 7, 7, -1]
+//k = 4
+//Output:
+//
+//20
+//Explanation: The subarrays of nums with length 4 are:
+//
+//[3, 2, 2, 3] # elements 3 and 2 are repeated.
+//[2, 2, 3, 4] # element 2 is repeated.
+//[2, 3, 4, 6] # meets the requirements and has a sum of 15.
+//[3, 4, 6, 7] # meets the requirements and has a sum of 20.
+//[4, 6, 7, 7] # element 7 is repeated.
+//[6, 7, 7, -1] # element 7 is repeated.
+//We return 20 because it is the maximum subarray sum of all the subarrays that meet the conditions.
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MaxSumofDistinct {
+    public static void main(String[] args) {
+        int[] arr = new int[]{3, 2, 2, 3, 4, 6, 7, 7, -1};
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        int start = 0;
+        int k = 4;
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+
+        for(int end = 0; end < arr.length; end++) {
+
+            sum += arr[end];
+            map.put(arr[end], map.getOrDefault(arr[end], 0) + 1);
+
+            if(end - start + 1 == k) {
+                if(map.size() == k) {
+                    max = Math.max(sum, max);
+                }
+
+                sum -= arr[start];
+
+                map.put(arr[start], map.get(arr[start]) - 1);
+
+                if(map.get(arr[start]) == 0) {
+                    map.remove(arr[start]);
+                }
+
+                start++;
+            }
+        }
+
+        System.out.println("max sum " + max);
+    }
+}

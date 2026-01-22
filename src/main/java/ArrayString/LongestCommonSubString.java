@@ -61,5 +61,3 @@ public class LongestCommonSubString {
 
 
 }
-
-// This code is contributed by Sumit Ghosh

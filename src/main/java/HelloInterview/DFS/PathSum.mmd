@@ -1,0 +1,13 @@
+flowchart TD
+    A["hasPathDFS(4, 17)"] --> B["hasPathDFS(2, 13)"]
+    A --> C["hasPathDFS(7, 13)"]
+
+    B --> D["hasPathDFS(1, 11) → false"]
+    B --> E["hasPathDFS(3, 11) → false"]
+    B --> F["returns false"]
+
+    C --> G["hasPathDFS(6, 6) → true"]
+    C --> H["hasPathDFS(9, 6) (not checked because left true)"]
+    C --> I["returns true"]
+
+    A --> J["returns true (path 4→7→6)"]
