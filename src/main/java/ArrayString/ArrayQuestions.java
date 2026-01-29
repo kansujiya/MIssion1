@@ -53,6 +53,13 @@ public class ArrayQuestions {
     public static void rotate(int[] nums, int k) {
         int n = nums.length;
         k = k%n;//All we have to do is to rotate all numbers the remainder times.
+        //WHY
+        //arr = [1,2,3,4,5]
+        //n = 5
+        //k = 7
+        //Rotating 7 times is the same as rotating:
+        //
+        //7 % 5 = 2 times
         reverse(nums, 0, n-1);
         reverse(nums, 0, k-1);
         reverse(nums, k, n-1);
